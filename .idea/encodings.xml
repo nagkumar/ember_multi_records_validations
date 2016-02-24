@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/controllers/books/new.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/models/utils/ember-model-deep-clone.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/router.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/routes/books/new.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/templates/books/new.hbs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bower.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/package.json" charset="UTF-8" />
   </component>
 </project>

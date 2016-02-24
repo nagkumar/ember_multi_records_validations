@@ -1,6 +1,12 @@
 import Ember from 'ember';
+import EmberModelDeepCloneAndCopy from 'example1/models/utils/ember-model-deep-clone-and-copy';
 
 export default Ember.Route.extend({
+  model: function (params)
+  {
+    return EmberModelDeepCloneAndCopy.create({model: this.store.modelFor('book')});
+  },
+
   actions: {
     createBook: function ()
     {
@@ -39,10 +45,8 @@ export default Ember.Route.extend({
                             {
                               bookNew.set("publisher", publisherFromDB);
                               bookNew2.set("publisher", publisherFromDB);
-
                               author.save().then(function (authorFromServer)
                                                  {
-                                                   //Set The Author to the books
                                                    bookNew.get("authors").then(function (authors)
                                                                                {
                                                                                  authors.pushObject(authorFromServer);
@@ -52,8 +56,6 @@ export default Ember.Route.extend({
                                                                                 {
                                                                                   authors.pushObject(authorFromServer);
                                                                                 });
-
-                                                   //Save the book
                                                    bookNew.save().then(function (bookNewAny)
                                                                        {
                                                                          that.transitionTo('books.book', bookNewAny);
