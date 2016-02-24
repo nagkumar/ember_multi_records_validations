@@ -6,7 +6,7 @@ export default DS.Model.extend({
   pages: DS.attr('number'),
   description: DS.attr('string'),
   type: DS.attr('string'),
-  authors: DS.hasMany('author', {async: true}),
   publisher: DS.belongsTo('publisher', {async: true}),
+  authors: DS.hasMany('author', {async: true}),
   reviews: DS.hasMany("review", {async: true})
 });

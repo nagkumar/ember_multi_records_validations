@@ -4,6 +4,11 @@ export default DS.RESTAdapter.extend({
   shouldReloadAll: function ()
   {
     return true;
+  },
+
+  shouldBackgroundReloadRecord: function (store, aModel)
+  {
+    return !aModel.record.get("isNew");
   }
 });
 

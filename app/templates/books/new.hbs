@@ -1,24 +1,25 @@
 <h3> Create a new book </h3>
 <h4> Enter your book details </h4>
+{{log model}}
 Title:<br>
-{{input value=title}}
+{{input value=model.title}}
 <br>
 ISBN:<br>
-{{input value=isbn}}
+{{input value=model.isbn}}
 <br>
 Pages:<br>
-{{input value=pages}}
+{{input value=model.pages}}
 <br>
 Description:<br>
-{{input value=description}}
+{{input value=model.description}}
 
 <h4> Enter your Author details </h4>
 
 First Name:<br>
-{{input value=firstName}}
+{{input value=model.authors.firstObject.firstName}}
 <br>
 Last Name:<br>
-{{input value=lastName}}
+{{input value=model.authors.firstObject.lastName}}
 <br>
 Bio:<br>
 {{input value=bio}}
@@ -32,4 +33,4 @@ Organization Name:<br>
 Address:<br>
 {{input value=address}}
 <br><br><br>
-<button {{action 'createBook'}}>Submit</button>
+<button {{action 'createBook' model}}>Submit</button>
